@@ -42,7 +42,7 @@ public class Move : MonoBehaviour {
 
         {
 
-            float AD = Input.GetAxis("Horisintal");
+            float AD = Input.GetAxis("Horisontal");
 
             float MS = Input.GetAxis("Vertical");
 
