@@ -1,66 +1,40 @@
 using System.Collections;
-
 using System.Collections.Generic;
-
 using UnityEngine;
-
-
 
 public class Move : MonoBehaviour {
 
-
-
-    CharacterController MyPawnBody;
-
-
+    CharacterController Zombie2;
 
     public float speed = 6.0F;
 
-
-
     Vector3 moveDerection = Vector3.zero;
-
-
 
  // Use this for initialization
 
  void Start () {
 
-        MyPawnBody = this.GetComponent<CharacterController>();
-
-
-
+        Zombie2 = this.GetComponent<CharacterController>();
     }
-
-
-
-    // Update is called once per frame
+   // Update is called once per frame
 
     void Update() {
 
-        if (MyPawnBody != null)
+        if (Zombie2 != null)
 
         {
 
-            float AD = Input.GetAxis("Horisontal");
+            float AD = Input.GetAxis("Horizontal");
 
             float MS = Input.GetAxis("Vertical");
 
-
-
             moveDerection = new Vector3(AD, 0, MS);
-
-
 
             moveDerection = transform.TransformDirection(moveDerection);
 
-
-
             moveDerection *= speed;
 
-
-
-            MyPawnBody.Move(moveDerection * Time.deltaTime);
+            Zombie2.Move(moveDerection * Time.deltaTime);
 
         }
 
